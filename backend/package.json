@@ -6,15 +6,16 @@
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
     "cors": "^2.8.5",
-    "drizzle-orm": "^0.39.1",
+    "drizzle-orm": "^0.45.2",
     "express": "^4.21.2"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.30.4"
+    "drizzle-kit": "^0.31.10"
   }
 }
