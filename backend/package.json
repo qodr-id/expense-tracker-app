@@ -1,0 +1,20 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "cors": "^2.8.5",
+    "drizzle-orm": "^0.39.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.4"
+  }
+}

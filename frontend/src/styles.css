@@ -1,0 +1,277 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #eef2f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 18px;
+  padding: 24px;
+}
+
+.nav {
+  width: min(100%, 760px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav a,
+.feature-grid a {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.nav a.active {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.panel {
+  width: min(100%, 760px);
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(31, 41, 55, 0.12);
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #0f766e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stack-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.stack-form input,
+.note-form input,
+.note-form textarea {
+  min-width: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+
+.note-form {
+  display: grid;
+  gap: 10px;
+}
+
+.note-form textarea {
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.item-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.todo-item label {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-item span {
+  overflow-wrap: anywhere;
+}
+
+.note-item,
+.thread-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.note-item h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.note-item p,
+.thread-item p {
+  margin: 0;
+  color: #475569;
+  overflow-wrap: anywhere;
+}
+
+.completed {
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.ghost-button {
+  flex: 0 0 auto;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.message {
+  margin: 18px 0 0;
+  color: #64748b;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.pager,
+.reaction-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pager span {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.reaction-row {
+  align-items: center;
+  margin-top: 14px;
+}
+
+.reaction-picker {
+  position: relative;
+}
+
+.reaction-picker summary {
+  list-style: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 14px;
+}
+
+.reaction-picker summary::-webkit-details-marker {
+  display: none;
+}
+
+.emoji-popover {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 8px;
+  box-shadow: 0 14px 30px rgba(31, 41, 55, 0.16);
+}
+
+.emoji-popover button {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.reaction-count {
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: #475569;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .panel {
+    padding: 20px;
+  }
+
+  .stack-form,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
