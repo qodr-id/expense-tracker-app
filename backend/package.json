@@ -10,8 +10,11 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@better-auth/drizzle-adapter": "^1.6.11",
     "@libsql/client": "^0.14.0",
+    "better-auth": "^1.6.11",
     "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "express": "^4.21.2"
   },

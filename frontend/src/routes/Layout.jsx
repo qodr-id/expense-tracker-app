@@ -11,6 +11,9 @@ export function Layout() {
         <Link to="/todo">Todo</Link>
         <Link to="/notes">Notes</Link>
         <Link to="/threads">Threads</Link>
+        <Link to="/public">Public</Link>
+        <Link to="/protected">Protected</Link>
+        <Link to="/sign-in">Sign in</Link>
       </nav>
       <Outlet />
     </main>

@@ -101,6 +101,34 @@ h1 {
   padding: 12px 14px;
 }
 
+.auth-panel a,
+.auth-card a {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.auth-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 16px;
+}
+
+.auth-card p {
+  margin: 0;
+  color: #475569;
+}
+
+.code-block {
+  overflow: auto;
+  margin: 18px 0 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 16px;
+}
+
 .note-form {
   display: grid;
   gap: 10px;

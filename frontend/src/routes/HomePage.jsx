@@ -12,6 +12,9 @@ export function HomePage() {
         <Link to="/todo">Todo List</Link>
         <Link to="/notes">Notes Pagination</Link>
         <Link to="/threads">Thread Infinite Scroll</Link>
+        <Link to="/public">Public Route</Link>
+        <Link to="/protected">Protected Route</Link>
+        <Link to="/sign-up">Sign Up</Link>
       </div>
     </section>
   );
