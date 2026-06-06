@@ -5,9 +5,7 @@ export function Layout() {
   return (
     <main className="app">
       <nav className="nav">
-        <Link to="/" activeOptions={{ exact: true }}>
-          Home
-        </Link>
+        <Link to="/expenses">Expenses</Link>
         <Link to="/todo">Todo</Link>
         <Link to="/notes">Notes</Link>
         <Link to="/threads">Threads</Link>

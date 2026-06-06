@@ -1,4 +1,4 @@
-# TanStack Demo App
+# Expense Tracker + TanStack Demo
 
 - `frontend`: React + TanStack Query + TanStack Router
 - `backend`: Express + Drizzle ORM + SQLite
@@ -56,7 +56,10 @@ Backend berjalan di `http://localhost:3000`.
 ## Route Frontend
 
 ```txt
-/          Home
+/          Redirect ke expenses atau sign-in
+/expenses  Expense tracker (wajib login)
+/sign-in   Sign in
+/sign-up   Sign up
 /todo      Todo List
 /notes     Notes dengan pagination
 /threads   Threads dengan infinite scroll dan reaction emoji
@@ -65,12 +68,16 @@ Backend berjalan di `http://localhost:3000`.
 ## Struktur
 
 ```txt
+frontend/src/features/expenses
+frontend/src/features/auth
 frontend/src/features/todos
 frontend/src/features/notes
 frontend/src/features/threads
 frontend/src/routes
 frontend/src/shared
 
+backend/src/features/expenses
+backend/src/features/auth
 backend/src/features/todos
 backend/src/features/notes
 backend/src/features/threads
@@ -81,6 +88,10 @@ backend/src/shared
 ## API
 
 ```txt
+GET    /api/expenses?month=YYYY-MM
+POST   /api/expenses
+DELETE /api/expenses/:id
+
 GET    /todos
 POST   /todos
 PATCH  /todos/:id

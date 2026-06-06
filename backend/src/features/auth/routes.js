@@ -1,11 +1,4 @@
-import { fromNodeHeaders } from "better-auth/node";
-import { auth } from "../../auth.js";
-
-async function getSession(req) {
-  return auth.api.getSession({
-    headers: fromNodeHeaders(req.headers)
-  });
-}
+import { getSession } from "../../shared/session.js";
 
 export function registerAuthExampleRoutes(app) {
   app.get("/api/session", async (req, res, next) => {

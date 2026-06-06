@@ -28,7 +28,7 @@ function AuthForm({ mode }) {
       return;
     }
 
-    navigate({ to: "/protected" });
+    navigate({ to: "/expenses" });
   }
 
   return (

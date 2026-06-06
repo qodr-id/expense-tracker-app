@@ -4,6 +4,7 @@ import express from "express";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./auth.js";
 import { registerAuthExampleRoutes } from "./features/auth/routes.js";
+import { registerExpenseRoutes } from "./features/expenses/routes.js";
 import { registerNoteRoutes } from "./features/notes/routes.js";
 import { registerThreadRoutes } from "./features/threads/routes.js";
 import { registerTodoRoutes } from "./features/todos/routes.js";
@@ -23,6 +24,7 @@ app.all("/api/auth/*", toNodeHandler(auth));
 app.use(express.json());
 
 registerAuthExampleRoutes(app);
+registerExpenseRoutes(app);
 registerTodoRoutes(app);
 registerNoteRoutes(app);
 registerThreadRoutes(app);

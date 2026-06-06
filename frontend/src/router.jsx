@@ -1,17 +1,34 @@
-import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
+import { createRootRoute, createRoute, createRouter, redirect } from "@tanstack/react-router";
 import { ProtectedPage, PublicPage, SignInPage, SignUpPage } from "./features/auth/AuthPages";
+import { ExpensesPage } from "./features/expenses/ExpensesPage";
 import { NotesPage } from "./features/notes/NotesPage";
 import { ThreadsPage } from "./features/threads/ThreadsPage";
 import { TodoPage } from "./features/todos/TodoPage";
-import { HomePage } from "./routes/HomePage";
 import { Layout } from "./routes/Layout";
+import { authClient } from "./shared/auth-client";
 
 const rootRoute = createRootRoute({ component: Layout });
 
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: HomePage
+  beforeLoad: async () => {
+    const { data: session } = await authClient.getSession();
+    throw redirect({ to: session ? "/expenses" : "/sign-in" });
+  }
+});
+
+const expensesRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/expenses",
+  beforeLoad: async () => {
+    const { data: session } = await authClient.getSession();
+
+    if (!session) {
+      throw redirect({ to: "/sign-in" });
+    }
+  },
+  component: ExpensesPage
 });
 
 const todoRoute = createRoute({
@@ -58,6 +75,7 @@ const protectedRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
+  expensesRoute,
   todoRoute,
   notesRoute,
   threadsRoute,
