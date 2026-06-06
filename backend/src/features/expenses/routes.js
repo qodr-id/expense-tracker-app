@@ -5,6 +5,7 @@ import { now } from "../../shared/date.js";
 import { parseId } from "../../shared/params.js";
 import { requireSession } from "../../shared/session.js";
 
+
 export const expenseCategories = [
   "Makanan",
   "Transportasi",
